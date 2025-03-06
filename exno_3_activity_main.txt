@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- EditText for the first number -->
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter first number"
+        android:inputType="numberDecimal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"/>
+
+    <!-- EditText for the second number -->
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter second number"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/editTextNumber1"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"/>
+
+    <!-- Button to add the numbers -->
+    <Button
+        android:id="@+id/btnAddNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Numbers"
+        android:layout_below="@id/editTextNumber2"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- TextView to show the result -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result: "
+        android:textSize="18sp"
+        android:layout_below="@id/btnAddNumbers"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
