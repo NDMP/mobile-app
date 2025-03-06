@@ -1,0 +1,48 @@
+package com.example.circle;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+    /** Called when the activity is first created. */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Set custom view to be displayed
+        setContentView(new MyView(this));
+    }
+
+    // Custom View class for drawing a circle
+    private static class MyView extends View {
+
+        public MyView(Context context) {
+            super(context);
+        }
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            super.onDraw(canvas);
+
+            // Get the width and height of the canvas
+            var x = getWidth();
+            var y = getHeight();
+            var radius = 100; // Set the radius for the circle
+
+            var paint = new Paint(); // Create a paint object
+            paint.setStyle(Paint.Style.FILL);
+            paint.setColor(Color.WHITE); // Set color to white
+            canvas.drawPaint(paint); // Fill the canvas with white
+
+            // Set color for the circle using hex value
+            paint.setColor(Color.parseColor("#00FF00"));
+            // Draw a circle at the center of the canvas
+            canvas.drawCircle(x / 2, y / 2, radius, paint);
+        }
+    }
+}
