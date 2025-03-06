@@ -1,0 +1,41 @@
+MainActivity.java
+
+package com.example.graphics;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Set the view to your custom view
+        setContentView(new MyView(this));
+    }
+
+    // Custom view for drawing
+    private static class MyView extends View {
+
+        public MyView(Context context) {
+            super(context);
+        }
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            // Create a paint object
+            var paint = new Paint();
+            paint.setColor(Color.GREEN);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(3);
+
+            // Draw a rectangle on the canvas
+            canvas.drawRect(20, 20, 100, 100, paint);
+        }
+    }
+}
