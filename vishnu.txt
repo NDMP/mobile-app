@@ -1,0 +1,27 @@
+**Abstract**
+The Daily Expense Tracker is a web-based application designed to help users manage their financial transactions effectively. It provides an intuitive interface to track income and expenses, categorize transactions, generate reports, and analyze spending habits. The system enables users to gain insights into their financial health, making informed decisions to improve budgeting and savings. With secure authentication and user-friendly features, this application simplifies personal finance management.
+
+**Problem Statement**
+Managing daily expenses manually can be cumbersome and error-prone, leading to ineffective budgeting and financial mismanagement. Many individuals struggle to keep track of their expenditures, resulting in overspending and lack of savings. Existing methods, such as pen-and-paper or spreadsheets, lack automation and analytical capabilities, making it difficult to assess financial trends over time. This project aims to address these challenges by providing a digital solution for efficient expense tracking.
+
+**Hardware & Software Requirements**
+
+*Hardware Requirements:*
+- Processor: Intel Core i3 or higher
+- RAM: 4GB or more
+- Hard Disk: 10GB free space
+- Internet Connection: Required for online access
+
+*Software Requirements:*
+- Operating System: Windows/Linux/MacOS
+- Server: XAMPP/WAMP/LAMP (Apache, MySQL, PHP)
+- Database: MySQL
+- Programming Language: PHP, HTML, CSS, JavaScript
+- Web Browser: Chrome, Firefox, Edge
+
+**Existing System**
+The traditional methods of managing expenses involve using paper records, spreadsheets, or standalone desktop applications. These methods are inefficient, prone to human errors, and do not offer real-time insights. Users often face difficulties in maintaining accurate financial records and analyzing their spending behavior over time.
+
+**Proposed System**
+The proposed system is a web-based application that allows users to record their financial transactions digitally. It offers real-time expense tracking, categorization, and report generation, making financial management more efficient. The system provides authentication for secure access, a user-friendly dashboard for easy navigation, and graphical insights into spending patterns. By automating calculations and providing data analytics, the system empowers users to take control of their finances effectively.
+
