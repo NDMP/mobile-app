@@ -1,0 +1,108 @@
+MainActivity.java
+
+package com.example.exno3;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText t1, t2;
+    Button b1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initializing views
+        t1 = findViewById(R.id.editText1);
+        t2 = findViewById(R.id.editText2);
+        b1 = findViewById(R.id.button1);
+
+        // Setting OnClickListener for the button
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Getting the text input from EditText fields
+                String v1 = t1.getText().toString();
+                String v2 = t2.getText().toString();
+
+                // Parsing the input strings to integers
+                try {
+                    int a = Integer.parseInt(v1);
+                    int b = Integer.parseInt(v2);
+
+                    // Calculating sum
+                    int sum = a + b;
+
+                    // Showing the result in a Toast
+                    Toast.makeText(MainActivity.this, "Sum of Two No: " + sum, Toast.LENGTH_LONG).show();
+                } catch (NumberFormatException e) {
+                    // Handling invalid input (non-numeric values)
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+}
+
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="No 1"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="No 2"
+        app:layout_constraintTop_toBottomOf="@id/editText1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="41dp"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintTop_toBottomOf="@id/editText2"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="44dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
