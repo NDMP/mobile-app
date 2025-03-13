@@ -1,4 +1,4 @@
-package com.example.simplecalculator;
+package com.example.myapplication;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private double currentResult = 0;
     private double lastNumber = 0;
     private String currentOperation = "";
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
         Button button9 = findViewById(R.id.button9);
-        
+        Button button0 = findViewById(R.id.button0);
+
         // Operation buttons
         Button buttonAdd = findViewById(R.id.buttonAdd);
         Button buttonSubtract = findViewById(R.id.buttonSubtract);
+        Button buttonExponent = findViewById(R.id.buttonExponent);
         Button buttonEqual = findViewById(R.id.buttonEqual);
 
         // Set onClick listeners for the number buttons
@@ -46,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 resultTextView.setText(String.valueOf(currentResult));
             }
         };
-        
-        // Set onClick listeners for the operation buttons
+
+        // Set onClick listeners for operation buttons
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +68,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonExponent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastNumber = currentResult;
+                currentOperation = "^";
+                currentResult = 0;
+            }
+        });
+
         // Set onClick listener for equal button
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     currentResult = lastNumber + currentResult;
                 } else if (currentOperation.equals("-")) {
                     currentResult = lastNumber - currentResult;
+                } else if (currentOperation.equals("^")) {
+                    currentResult = Math.pow(lastNumber, currentResult); // Exponentiation
                 }
                 resultTextView.setText(String.valueOf(currentResult));
             }
@@ -89,5 +102,6 @@ public class MainActivity extends AppCompatActivity {
         button7.setOnClickListener(numberClickListener);
         button8.setOnClickListener(numberClickListener);
         button9.setOnClickListener(numberClickListener);
+        button0.setOnClickListener(numberClickListener);
     }
 }
